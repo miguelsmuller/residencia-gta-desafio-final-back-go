@@ -1,0 +1,115 @@
+@hostname = localhost
+#@hostname = 18.231.147.204
+@port = 3009
+
+@host = {{hostname}}:{{port}}
+
+
+### API 
+
+GET http://{{host}}/
+
+
+### API HEALTH
+POST http://{{host}}/health
+
+### EndPoint inválido
+GET http://{{host}}/url_invalida
+
+
+
+### {GET} LISTA DE RESTAURANTES
+GET http://{{host}}/restaurants
+
+
+
+### {GET} RESTAURANTE ESPECIFICO VÁLIDO
+GET http://{{host}}/restaurants/2
+
+### {GET} RESTAURANTE ESPECIFICO INVÁLIDO
+GET http://{{host}}/restaurants/999
+
+
+
+### {GET} PRODUTOS DE UM RESTAURANTE ESPECIFICO VÁLIDO
+GET http://{{host}}/restaurants/1/products
+
+### {GET} PRODUTOS DE UM RESTAURANTE ESPECIFICO INVÁLIDO
+GET http://{{host}}/restaurants/9999/products
+
+
+
+### {GET} DADOS DE UM PRODUTO UNICO VÁLIDO
+GET http://{{host}}/products/1
+
+### {GET} DADOS DE UM PRODUTO UNICO INVÁLIDO
+GET http://{{host}}/products/9999
+
+
+
+### {GET} ADDITIONALS DE UM PRODUTO UNICO VÁLIDO
+GET http://{{host}}/products/45/additionals
+
+### {GET} ADDITIONALS DE UM PRODUTO UNICO INVÁLIDO
+GET http://{{host}}/products/999/additionals
+
+
+
+### {POST} SALVA UM RESTAURANTE
+POST http://{{host}}/restaurants HTTP/1.1
+content-type: application/json
+
+{
+  "name": "MC Donalds",
+  "owner": "Ronald MC Donalds",
+  "address": "Rua sem cobertura, 33",
+  "description": "Restaurante para comidas frias",
+  "image": "https://insira.uma.imagem.aqui.com.br/"
+}
+
+### {POST} SALVAR PRODUTO EM UM RESTAURANTE
+POST http://{{host}}/products/ HTTP/1.1
+content-type: application/json
+
+{
+  "idRestaurant": 1,
+  "name": "cheeseburguer",
+  "description": "pão, carne e queijo",
+  "price": 15.00,
+  "image": "https://insira.uma.imagem.aqui.com.br/"
+}
+
+
+
+### {POST} SALVAR PRODUTO com adicionais EM UM RESTAURANTE
+POST http://{{host}}/products/ HTTP/1.1
+content-type: application/json
+
+{
+  "idRestaurant": 1,
+  "name": "cheeseburguer",
+  "description": "pão, carne e queijo",
+  "price": 15.00,
+  "image": "https://insira.uma.imagem.aqui.com.br/",
+  "additionals":[
+    {
+      "name": "goibada",
+      "price": 15.90
+    },
+    {
+      "name": "açúcar",
+      "price": 1.20
+    }
+  ]
+}
+### {POST} SALVAR PRODUTO EM UM RESTAURANTE QUE NÃO EXISTE
+POST http://{{host}}/products/ HTTP/1.1
+content-type: application/json
+
+{
+  "idRestaurant": 30000,
+  "name": "cheeseburguer",
+  "description": "pão, carne e queijo",
+  "price": 15.00,
+  "image": "https://insira.uma.imagem.aqui.com.br/"
+}
