@@ -15,18 +15,6 @@ services:
     networks:
       - appNetwork
 
-  api:
-    image: node:16
-    env_file: .env
-    build:
-      context: .
-    depends_on:
-      - database
-    ports:
-      - '${SERVER_PORT}:${SERVER_PORT}'
-    restart: unless-stopped
-    networks:
-      - appNetwork
 
   pgadmin:
     image: dpage/pgadmin4

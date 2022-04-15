@@ -22,7 +22,7 @@
 API simples em Go com rotas para listagem de restaurantes, busca exata de restaurnate(por nome) e remoção de um restaurante.
 
 ### Dependencias
-
+- [Go](https://go.dev/doc/)
 - [Fiber](https://github.com/gofiber/fiber)
 - [PG](https://github.com/lib/pq)
 
@@ -31,7 +31,7 @@ API simples em Go com rotas para listagem de restaurantes, busca exata de restau
 ```
 docker-compose up --detach --force-recreate --build database
 ```
-
+- Ou
 ```
 docker-compose up --detach --force-recreate --build database pgadmin
 ```
