@@ -2,7 +2,7 @@
 
 # **Trilha Específica - Desafio Final - Back End - GO**
 
-## **Aula 1 - Equipe 2 - 11/04/2022**
+## **Equipe 2 - 11/04/2022 a 14/04/2022**
 
 - [Alexia Assumpção](https://github.com/alexiaassumpcao)
 - [Carlos Lopes](https://github.com/devcarlosl)
